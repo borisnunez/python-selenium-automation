@@ -1,5 +1,5 @@
 # Created by borisnunez at 4/17/26
-Feature: Test Case for Cart Icon on Target
+Feature: Test Cases on Target
 
   Scenario: Verify that "Your cart is empty" message is shown
     Given Open Target main page
