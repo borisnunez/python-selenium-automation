@@ -5,5 +5,5 @@ Feature: Test cases for "Add to Card" on Target
     Given Open Target main page
     When Search for soccer cleats
     When Click "Add to Cart" for selected soccer cleats
-    And Click "Add to Cart" again for soccer cleats
+    And Click "Add to Cart" on side window for soccer cleats
     Then Verify product added to cart

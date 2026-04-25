@@ -13,7 +13,7 @@ def click_add_to_cart(context, search_query):
     sleep(7)
 
 
-@when('Click "Add to Cart" again for {search_query}')
+@when('Click "Add to Cart" on side window for {search_query}')
 def click_add_to_cart_again(context, search_query):
     context.driver.find_element(*ADD_TO_CART_AGAIN).click()
     sleep(7)
