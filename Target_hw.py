@@ -18,7 +18,7 @@ driver.get('https://www.target.com/')
 sleep(3)
 
 #click the account button
-driver.find_element(By.XPATH, "//span[@class='sc-1a162949-3 iuQwR display-name h-margin-r-x3']").click()
+driver.find_element(By.CSS_SELECTOR, "h1[class*='StyledHeading']").click()
 sleep(3)
 driver.find_element(By.XPATH, '//button[@data-test="accountNav-signIn"]').click()
 sleep(3)
