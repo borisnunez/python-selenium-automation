@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from behave import given, when, then
 from time import sleep
 
@@ -6,10 +7,11 @@ from time import sleep
 TARGET_CIRCLE = (By.ID, 'utilityNav-circle')
 STORYCARD_1 = (By.CSS_SELECTOR, 'a[data-lnk*="C_TargetCircle360™"]')
 STORYCARD_2 = (By.CSS_SELECTOR, 'img[alt*="Explore Target Circle™ Card"]')
+
 @when('Click on Target Circle')
 def click_target_circle(context):
-    context.driver.find_element(*TARGET_CIRCLE).click()
-    sleep(3)
+    context.wait.until(EC.element_to_be_clickable(TARGET_CIRCLE)).click()
+    #sleep(3)
 
 @then("Verify {expected_amount} storycards are shown")
 def verify_storycard_amount(context, expected_amount):  #  expected_amount = " "
