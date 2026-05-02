@@ -1,10 +1,10 @@
 # Created by borisnunez at 4/17/26
 Feature: Test cases for Product Search on Target
 
-  Scenario: User can search for a product "soccer cleats" on Target
+  Scenario: User can search for a product "coffee" on Target
     Given Open Target main page
-    When Search for soccer cleats
-    Then Verify search results for soccer cleats shown
+    When Search for coffee
+    Then Verify search results for coffee shown
 
   Scenario: User can search for a product "dress shoes" on Target
     Given Open Target main page
@@ -22,4 +22,8 @@ Feature: Test cases for Product Search on Target
     |scotch tape    |scotch tape  |
     |chairs         |chairs       |
 
+  Scenario: Verify that user can see product names and images
+    Given Open Target main page
+    When Search for Playstation 5
+    Then Verify that every product has a name and an image
 

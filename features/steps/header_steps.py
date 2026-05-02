@@ -12,15 +12,15 @@ VERIFY_HEADER_LINKS_AMT = (By.CSS_SELECTOR, "[class*='HeaderLinksContainer'] a")
 @when('Click on Cart icon')
 def click_cart(context):
     #context.driver.find_element(*CART_ICON).click()
-    context.wait.until(EC.element_to_be_clickable(CART_ICON), message='Cart icon not visible').click()
-
+    #context.wait.until(EC.element_to_be_clickable(CART_ICON), message='Cart icon not visible').click()
+    context.app.header.click_on_cart()
 
 @when("Search for {search_query}")
 def search_product(context, search_query):
-    context.wait.until(EC.element_to_be_clickable(SEARCH_FIELD), message= ' Search field not visible').send_keys(search_query)
-    context.wait.until(EC.element_to_be_clickable(SEARCH_BTN), message='Search button not visible').click()
+    #context.wait.until(EC.element_to_be_clickable(SEARCH_FIELD), message= ' Search field not visible').send_keys(search_query)
+    #context.wait.until(EC.element_to_be_clickable(SEARCH_BTN), message='Search button not visible').click()
     #sleep(1)
-
+    context.app.header.search_product(search_query)
 
 @then("Verify header link container is shown")
 def verify_header_links(context):
