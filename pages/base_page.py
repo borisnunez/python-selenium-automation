@@ -1,3 +1,7 @@
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 class Page:
     def __init__(self, driver):
         self.driver = driver
@@ -16,6 +20,26 @@ class Page:
 
     def input_text(self, text, *locator):
         self.driver.find_element(*locator).send_keys(text)
+
+    def get_current_window(self):
+        return self.driver.current_window_handle
+
+    def switch_to_new_window(self):
+        self.wait.until(EC.new_window_is_opened)
+        all_windows = self.driver.window_handles
+        print('All windows before switching:', all_windows)
+        self.driver.switch_to.window(all_windows[1])
+        print('Window after switch', self.get_current_window())
+
+    def switch_to_window_by_id(self, window_id):
+        self.driver.switch_to.window(window_id)
+        print('Window after switch', self.get_current_window())
+
+    def refresh_page(self):
+        self.driver.refresh()
+
+    def close(self):
+        self.driver.close()
 
     def wait_until_clickable(self, *locator):
         element = self.wait.until(
@@ -43,9 +67,8 @@ class Page:
             message=f'Element by {locator} still visible on the page'
         )
 
-    def wait_until_url_contains(self, expected_partial_url):
-        self.wait.until(
-            EC.url_contains(expected_partial_url),
+    def wait_until_url_contains(self, expected_partial_url, timeout=10):
+        WebDriverWait(self.driver, timeout).until(EC.url_contains(expected_partial_url),
             message=f'Expected "{expected_partial_url}" not in "{self.driver.current_url}"'
         )
 
