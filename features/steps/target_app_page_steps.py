@@ -19,7 +19,6 @@ def click_on_terms_and_conditions_link(context):
     print('All windows after clicking TC link', context.driver.window_handles)
     print('Current window', context.app.page.get_current_window())
 
-
 @when('Switch to new window')
 def switch_window(context):
     all_windows = context.driver.window_handles

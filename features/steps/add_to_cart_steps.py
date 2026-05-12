@@ -1,7 +1,5 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
 from behave import given, when, then
-from time import sleep
 
 #specific description of item added to cart
 ADD_TO_CART_ICON = (By.CSS_SELECTOR, 'button[aria-label="Add Folgers Classic Medium Roast Ground Coffee - 25.9oz to cart"]')
