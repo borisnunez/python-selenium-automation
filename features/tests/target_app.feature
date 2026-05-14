@@ -8,5 +8,5 @@ Feature: Tests for Target App page
     When Click on Target terms and conditions link
     And Switch to new window
     Then Verify Terms and Conditions page is opened
-    And User can close new window
-    And Switch back to original
+    And Close current window
+    And Return to original window
