@@ -7,13 +7,15 @@ LISTINGS = (By.CSS_SELECTOR, "[data-test='@web/site-top-of-funnel/ProductCardWra
 PRODUCT_TITLE = (By.CSS_SELECTOR, "[data-test='@web/ProductCard/title']")
 PRODUCT_IMG = (By.CSS_SELECTOR, 'img')
 
-   # @when('Hover favorites icon')
-    #def hover_fav_icon(context):
-     #   pass
+@when('Hover favorites icon')
+def hover_fav_icon(context):
+    context.app.search_results_page.hover_fav_icon()
 
-    #@then('Favorites tooltip is shown')
-    #def verify_fav_tooltip(context):
-      #  pass
+
+@then('Favorites tooltip is shown')
+def verify_fav_tooltip(context):
+    context.app.search_results_page.verify_fav_tooltip()
+
 
 @then("Verify search results for {product} shown")
 def verify_search_results(context, product):

@@ -7,7 +7,7 @@ from pages.target_app_page import TargetAppPage
 from pages.cart_page import Cart
 from pages.sign_in_page import SignInPage
 from pages.terms_and_conditions_page import TermsAndConditions
-
+from pages.help_page import HelpPage
 
 class Application:
 
@@ -21,3 +21,4 @@ class Application:
         self.sign_in_page = SignInPage(driver)
         self.add_to_cart_page = AddToCartPage(driver)
         self.terms_and_conditions_page =TermsAndConditions(driver)
+        self.help_page = HelpPage(driver)

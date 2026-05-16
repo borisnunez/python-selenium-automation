@@ -6,4 +6,9 @@ Feature: Sign in test cases
     When Click on Sing in from right side navigation menu
     Then Verify Sing in form opened
 
+  Scenario: Verify that Sign in form opened
+    Given Open Target Sign in page
+    When Enter correct email and click continue
+    And Enter incorrect password
+    Then Verify that en error message is shown
 

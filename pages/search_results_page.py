@@ -4,19 +4,18 @@ from pages.base_page import Page
 
 class SearchResultsPage(Page):
     SEARCH_RESULT_COUNT_TEXT = (By.XPATH, "//div[contains(@class, 'styles_resultCount')]")
-    #FAV_ICON = ()
-    #FAV_TOOLTIP = ()
+    FAV_ICON = (By.CSS_SELECTOR, '[data-test="FavoritesButton"]')
+    FAV_TOOLTIP = (By.XPATH, "//*[contains(text(), 'Click to sign in and save')]")
 
-    #def hover_fav_icon(self):
-      #  fav_icon = self.find_element(*self.FAV_ICON)
-       # actions = ActionChains(self.driver)
-        #actions.move_to_element()
-        #actions.perform()
+    def hover_fav_icon(self):
+        self.hover_element(*self.FAV_ICON)
 
-    #def verify_fav_tooltip(self):
-     #   pass
-
+    def verify_fav_tooltip(self):
+        self.wait_until_appear(*self.FAV_TOOLTIP)
 
     def verify_search_results(self, product):
         actual_result = self.find_element(*self.SEARCH_RESULT_COUNT_TEXT).text
         assert product in actual_result, f'Expected "{product}" not in actual "{actual_result}"'
+
+    def verify_url_products(self, product):
+        self.wait_until_url_contains(product)

@@ -27,7 +27,8 @@ Feature: Test cases for Product Search on Target
     When Search for Playstation 5
     Then Verify that every product has a name and an image
 
-  #Scenario: User can see favorites tooltip for search results
-    #Given Open Target main page
-    #And Hover favorites icon
-    #Then Favorites tooltip is shown
+  Scenario: User can see favorites tooltip for search results
+    Given Open Target main page
+    When Search for tea
+    When Hover favorites icon
+    Then Favorites tooltip is shown
