@@ -22,6 +22,7 @@ Feature: Test cases for Product Search on Target
     |scotch tape    |scotch tape  |
     |chairs         |chairs       |
 
+  @smoke
   Scenario: Verify that user can see product names and images
     Given Open Target main page
     When Search for Playstation 5

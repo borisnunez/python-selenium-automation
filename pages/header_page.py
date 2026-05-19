@@ -16,5 +16,5 @@ class Header(Page):
 
 
     def click_on_cart(self):
-        self.driver.find_element(*self.CART_ICON).click()
+        self.click(*self.CART_ICON)
 

@@ -21,3 +21,10 @@ class Login(Page):
 
 login_page = Login()
 login_page.input_text('test')
+
+    def solution(number):
+        number = 10
+        if number < 0:
+            return 0
+
+        return sum(i for i in range(number) if i % 3 == 0 or i % 5 == 0)

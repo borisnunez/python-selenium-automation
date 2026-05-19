@@ -3,7 +3,9 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+
 from app.application import Application
+from support.logger import logger
 from selenium.webdriver.chrome.options import Options
 
 def browser_init(context): #pass (context, scenario_name) for BrowserStack
@@ -46,6 +48,7 @@ def browser_init(context): #pass (context, scenario_name) for BrowserStack
 
 def before_scenario(context, scenario):
     print('\nStarted scenario: ', scenario.name)
+    # logger.info(f'Scenario started: {scenario.name}')
     browser_init(context) # pass (context, scenario.name) for BStack
 
 def before_step(context, step):
